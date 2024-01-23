@@ -94,9 +94,7 @@ sub BUILD {
 
 sub _build_af {
     my $self = shift;
-    my %args;
-    $args{base_url} = $self->base_url if $self->base_url;
-    return {{moduleName}}::ApiFactory->new(%args);
+    return {{moduleName}}::ApiFactory->new( $self->_cfg );
 }
 
 =head1 NAME

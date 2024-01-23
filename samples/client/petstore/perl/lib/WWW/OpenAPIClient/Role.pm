@@ -104,9 +104,7 @@ sub BUILD {
 
 sub _build_af {
     my $self = shift;
-    my %args;
-    $args{base_url} = $self->base_url if $self->base_url;
-    return WWW::OpenAPIClient::ApiFactory->new(%args);
+    return WWW::OpenAPIClient::ApiFactory->new( $self->_cfg );
 }
 
 =head1 NAME
